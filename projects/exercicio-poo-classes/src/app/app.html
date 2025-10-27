@@ -1,0 +1,55 @@
+
+<router-outlet />
+<h1>POO - Objeto e classes básicos (Livros)</h1>
+<hr />
+
+<div>
+  <button (click)="escolher('adicionar')">Adcionar um exemplar à biblioteca</button>
+  <button (click)="escolher('exemplaresCadastrados')">Exemplares cadastrados</button>
+  <button (click)="escolher('encontrarPorCdd')">Encontre pelo CDD</button>
+  <button (click)="escolher('nenhum')">Limpar</button>
+</div>
+
+<hr />
+
+<div *ngIf="acaoAtual === 'adicionar'">
+  <p>
+    ISBN (código que identifica o livro de forma única): <input type="number" [(ngModel)]="isbn" />
+  </p>
+  <p>
+    Titulo: <input type="text" [(ngModel)]="titulo" />
+  </p>
+  <p>
+    cdd (código que identifica o lugar onde está o exemplar na biblioteca): <input type="text" [(ngModel)]="cdd" />
+  </p>
+  <p>
+    Quantidade de exemplares: <input type="number" [(ngModel)]="quantidade" />
+  </p>
+
+  <button (click)="adicionarExemplar()">Adcionar Livro</button>
+</div>
+
+<div *ngIf="acaoAtual === 'exemplaresCadastrados'">
+  <div *ngFor="let livro of listaLivros">
+    <hr />
+    <h4>{{ livro.getTitulo() }}</h4>
+    <p>
+      <strong>ISBN:</strong> {{ livro.getIsbn() }}
+    </p>
+    <p>
+      <strong>CDD:</strong> {{ livro.getCdd() }}
+    </p>
+    <p>
+      <strong>Quantidade:</strong> {{ livro.getQuantidadeExemplares() }}
+    </p>
+  </div>
+</div>
+
+<div *ngIf="acaoAtual === 'encontrarPorCdd'">
+  Informe o CDD do livro: <input type="text" [(ngModel)]="cddProcura">
+  <button (click)="encontrarExemplar()">Pesquisar</button>
+</div>
+
+<div *ngIf="acaoAtual === 'nenhum'">
+  <h3>Escolha uma das opcoes.</h3>
+</div>
