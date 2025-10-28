@@ -48,6 +48,7 @@
 <div *ngIf="acaoAtual === 'encontrarPorCdd'">
   Informe o CDD do livro: <input type="text" [(ngModel)]="cddProcura">
   <button (click)="encontrarExemplar()">Pesquisar</button>
+  <p>{{mensagemCddProcura}}</p>
 </div>
 
 <div *ngIf="acaoAtual === 'nenhum'">

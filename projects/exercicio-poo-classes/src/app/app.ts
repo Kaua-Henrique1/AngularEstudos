@@ -41,18 +41,11 @@ export class AppComponent {
   }
 
   encontrarExemplar() {
-    for (let i = 0; i < this.listaLivros.length; i++) {
-      const element = this.listaLivros[i];
-      if (element.getCdd() === this.cddProcura) {
-        this.mensagemCddProcura = "lIVRO ENCONTRADO! "+element
-        break;
-      } else {
-        this.mensagemCddProcura = "Nenhum livro encontrado."
-      }
-    }
+    let exemplarEncontrado = this.listaLivros.find(livro => livro.getCdd() === this.cddProcura)
+    if (exemplarEncontrado === undefined) {
+      this.mensagemCddProcura = ("Livro nao encontrado.")
+    } else {
+      this.mensagemCddProcura = ("Titulo do livro: "+ exemplarEncontrado.getTitulo() + " ISBN: " + exemplarEncontrado.getIsbn() +" CDD: " + exemplarEncontrado.getCdd() +" Quantidade de Exemplares: "+ exemplarEncontrado.getQuantidadeExemplares())
+    } 
   }
-
-// obterCddExemplar() {
-    
-// }
 }
