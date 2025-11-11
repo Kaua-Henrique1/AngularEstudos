@@ -1,0 +1,30 @@
+<h1>Posto de Gasolina</h1>
+<hr />
+<div>
+  <h3>Preços:</h3> 
+  <p>
+    Gasolina (comum) = R${{gasolina}}
+  </p>
+  <p>
+    Gasolina (adtivada) =  R${{adtivada}}
+  </p>
+  <p>
+    Disel = R${{disel}}
+  </p>
+  <p>
+    Etanol = R${{etanol}}
+  </p>
+</div>
+<hr />
+<div>
+  <h3>Informações do Pedido:</h3>
+  <p>
+    Tipo de abastecimento: <input type="number" [(ngModel)]='gasolina'>
+  </p>
+  <p>
+    Quantidade de Litros: <input type="number" [(ngModel)]='litros'>
+  </p>
+</div>
+<button (click)="calculadoraGasolina()">Calcular Total</button>
+
+ 
