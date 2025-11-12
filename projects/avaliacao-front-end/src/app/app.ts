@@ -14,10 +14,19 @@ export class App {
   adtivada= 6.21;
   etanol= 4.56;
   disel= 5.40;
-  litros: number = 0;
-  
+  litros: number | null = null;
+  valorLitro: number | null = null;
+  dataAbastecimento: string ='';
+  tiposCombustivel: string[] = ['Gasolina', 'Etanol', 'Diesel'];
+  tipoSelecionado: string = this.tiposCombustivel[0]
+  totalAbastecimento: number = 0;
+
   calculadoraGasolina() {
-    
+    if (this.litros && this.valorLitro) {
+      this.totalAbastecimento = this.valorLitro * this.litros;
+    } else {
+      this.totalAbastecimento = 0;
+    }
   }
 
   protected readonly title = signal('Posto de Gasolina');
