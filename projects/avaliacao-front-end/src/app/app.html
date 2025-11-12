@@ -6,7 +6,7 @@
     Gasolina (comum) = R${{gasolina}}
   </p>
   <p>
-    Gasolina (adtivada) =  R${{adtivada}}
+    Gasolina (adtivada) =  R${{adtivada }}
   </p>
   <p>
     Disel = R${{disel}}
@@ -18,14 +18,28 @@
 <hr />
 <div>
   <h3>Informações do Pedido:</h3>
-  <p>
-    Tipo de abastecimento: <input type="number" [(ngModel)]='gasolina'>
-  </p>
+  <div>
+    Qual tipo de combustível:
+    <select name="tipo" [(ngModel)]="tipoSelecionado">
+      @for (item of tiposCombustivel; track item) {
+        <option [value]="item">{{item}}</option>
+      }
+    </select>
+  </div>
   <p>
     Quantidade de Litros: <input type="number" [(ngModel)]='litros'>
   </p>
 </div>
-
 <button (click)="calculadoraGasolina()">Calcular Total</button>
-
- 
+<div>  
+  @if (resumo) {
+    <p [ngClass]="{
+      'texto-gasolina': tipoSelecionado === 'Gasolina',
+      'texto-etanol': tipoSelecionado === 'Etanol',
+      'texto-aditivada': tipoSelecionado === 'Adtivada',
+      'texto-diesel': tipoSelecionado === 'Diesel'
+    }">Valor para pagar: {{totalAbastecimento | currency:'BRL'}}</p>
+    <p>Quantidade de litros: {{litros | number}}</p>
+    <p>Data da compra: {{dataAbastecimento | date:'dd/MM/yyyy'}}</p>
+  }
+</div>

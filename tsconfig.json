@@ -35,6 +35,12 @@
     },
     {
       "path": "./projects/exercicio-poo-classes/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/avaliacao-front-end/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/avaliacao-front-end/tsconfig.spec.json"
     }
   ]
 }

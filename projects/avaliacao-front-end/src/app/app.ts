@@ -16,16 +16,26 @@ export class App {
   disel= 5.40;
   litros: number | null = null;
   valorLitro: number | null = null;
-  dataAbastecimento: string ='';
-  tiposCombustivel: string[] = ['Gasolina', 'Etanol', 'Diesel'];
+  dataAbastecimento: Date = new Date();
+  tiposCombustivel: string[] = ['Gasolina', 'Etanol', 'Diesel', 'Adtivada'];
   tipoSelecionado: string = this.tiposCombustivel[0]
   totalAbastecimento: number = 0;
+  resumo: boolean = false;
 
   calculadoraGasolina() {
-    if (this.litros && this.valorLitro) {
-      this.totalAbastecimento = this.valorLitro * this.litros;
+    if (this.tipoSelecionado === 'Gasolina') {
+      this.valorLitro = this.gasolina
+    } else if(this.tipoSelecionado === 'Etanol') {
+      this.valorLitro = this.etanol
+    } else if(this.tipoSelecionado === 'Diesel') {
+      this.valorLitro = this.disel
     } else {
-      this.totalAbastecimento = 0;
+      this.valorLitro = this.adtivada
+    } 
+    
+    if (this.litros && this.valorLitro) {
+      this.resumo = true
+      this.totalAbastecimento = this.valorLitro * this.litros;
     }
   }
 
