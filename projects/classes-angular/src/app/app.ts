@@ -13,6 +13,7 @@ import { diario } from '../shared/models/diario';
 export class App {
 
   listaNotas: registroNotas[] = [];
+  
 
   protected readonly title = signal('ClassesAngular');
 }
