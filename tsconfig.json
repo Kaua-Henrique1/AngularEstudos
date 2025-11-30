@@ -41,6 +41,12 @@
     },
     {
       "path": "./projects/avaliacao-front-end/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/exercicio-signals/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/exercicio-signals/tsconfig.spec.json"
     }
   ]
 }
