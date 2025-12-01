@@ -263,25 +263,16 @@
         }
       }
     },
-<<<<<<< HEAD
     "exercicio-signals": {
       "projectType": "application",
       "schematics": {},
       "root": "projects/exercicio-signals",
       "sourceRoot": "projects/exercicio-signals/src",
-=======
-    "exerciciosPoo": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/exercicios-poo",
-      "sourceRoot": "projects/exercicios-poo/src",
->>>>>>> 61c3499c5843ee4e728389253aa64aa78cc7abaa
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-<<<<<<< HEAD
             "browser": "projects/exercicio-signals/src/main.ts",
             "polyfills": [
               "zone.js"
@@ -295,21 +286,6 @@
             ],
             "styles": [
               "projects/exercicio-signals/src/styles.css"
-=======
-            "browser": "projects/exercicios-poo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/exercicios-poo/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/exercicios-poo/public"
-              }
-            ],
-            "styles": [
-              "projects/exercicios-poo/src/styles.css"
->>>>>>> 61c3499c5843ee4e728389253aa64aa78cc7abaa
             ]
           },
           "configurations": {
@@ -340,17 +316,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-<<<<<<< HEAD
               "buildTarget": "exercicio-signals:build:production"
             },
             "development": {
               "buildTarget": "exercicio-signals:build:development"
-=======
-              "buildTarget": "exerciciosPoo:build:production"
-            },
-            "development": {
-              "buildTarget": "exerciciosPoo:build:development"
->>>>>>> 61c3499c5843ee4e728389253aa64aa78cc7abaa
             }
           },
           "defaultConfiguration": "development"
@@ -365,7 +334,6 @@
               "zone.js",
               "zone.js/testing"
             ],
-<<<<<<< HEAD
             "tsConfig": "projects/exercicio-signals/tsconfig.spec.json",
             "assets": [
               {
@@ -375,17 +343,6 @@
             ],
             "styles": [
               "projects/exercicio-signals/src/styles.css"
-=======
-            "tsConfig": "projects/exercicios-poo/tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/exercicios-poo/public"
-              }
-            ],
-            "styles": [
-              "projects/exercicios-poo/src/styles.css"
->>>>>>> 61c3499c5843ee4e728389253aa64aa78cc7abaa
             ]
           }
         }
