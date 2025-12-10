@@ -1,3 +1,10 @@
+# Conteúdo desse repositório transferido para repositório DEV_ESTUDOS
+
+
+
+
+
+
 # AngularEstudos
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
